@@ -133,10 +133,11 @@ def main():
     common.writeline()
     common.write('Google Cn Ip:')
     common.writeline()
-    check_ip.run(__filename__,'203.208.',36,47)
+    check_ip.run(__filename__,'203.208.',36,37)
+    check_ip.run(__filename__,'203.208.',46,47)
     common.writeconfig('google_cn','hosts')
     if need_google_hk:
-       common.writeline()
+        ucommon.writeline()
         common.write('Google Hk Ip:')
         common.writeline()
         check_ip.run(__filename__,'74.125.',0,255)
