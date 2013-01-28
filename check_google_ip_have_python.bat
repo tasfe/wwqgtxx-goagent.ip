@@ -1,3 +1,3 @@
 python check_google_ip.py
-@start git_commit.bat
+@start git_commit.bat -min
 pause

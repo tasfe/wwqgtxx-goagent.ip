@@ -75,6 +75,7 @@ class Common(object):
         common.IPS.append(ip)
 
     def writeconfig(self,section, option,):
+        str_ips = ''
         if self.IPS!=[]:
             for item in self.IPS:
                 str_ips = str_ips+item+'|'
