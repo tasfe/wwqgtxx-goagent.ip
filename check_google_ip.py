@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding:utf-8
-# by:wwqgtxx
+# by:wwqgtxx,phus
 
 import sys
 import os
@@ -127,18 +127,20 @@ check_ip = Check_ip()
 
 
 def main():
+    print '------------------------------------------------------ \n Google Cn Ip Getter \n by wwqgtxx \n------------------------------------------------------ \n '
     need_google_hk = False
     common.ifhasfile()
     common.writeline()
     common.write('Google Cn Ip:')
     common.writeline()
-    check_ip.run(__filename__,'203.208.',36,37)
+    check_ip.run(__filename__,'203.208.',36,47)
     common.writeconfig('google_cn','hosts')
-    if need_google_hk:
-        common.writeline()
+    if need_google_hk
+       common.writeline()
         common.write('Google Hk Ip:')
         common.writeline()
         check_ip.run(__filename__,'74.125.',0,255)
+        common.writeconfig('google_hk','hosts')
 
 if __name__ == '__main__':
     main()
