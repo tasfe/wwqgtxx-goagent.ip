@@ -33,14 +33,11 @@ class Common(object):
         """load config from proxy.ini"""
         ConfigParser.RawConfigParser.OPTCRE = re.compile(r'(?P<option>[^=\s][^=]*)\s*(?P<vi>[=])\s*(?P<value>.*)$')
         self.CONFIG = ConfigParser.ConfigParser()
-        self.CONFIG.read(getfile( __config__))
+        self.CONFIG.read(self.getfile( __config__))
         self.IPS = []
         self.filename = 'ip.txt'
 
-common = Common()
 
-
-class FilesUntil(object):
     def getfile(filename):
         global __file__
         __file__ = os.path.abspath(__file__)
@@ -78,7 +75,7 @@ class FilesUntil(object):
         common.IPS.append(ip)
 		
 		
-fileuntil = FilesUntil()
+common = Common()
 
 
 class Check_ip(object):
@@ -108,7 +105,7 @@ class Check_ip(object):
             if self.ips!=[]:
                 for item in self.ips:
                     str_ips = str_ips+item+'|'
-                fileuntil.write(filename,str_ips)
+                common.write(filename,str_ips)
                 self.ips = []
             else:
                 print ip_head+str_a+'.* is no useable ip.'
@@ -119,15 +116,15 @@ check_ip = Check_ip()
 
 def main():
     need_google_hk = False
-    fileuntil.ifhasfile(filename)
-    fileuntil.writeline(filename)
-    fileuntil.write(filename,'Google Cn Ip:')
-    fileuntil.writeline(filename)
+    common.ifhasfile(filename)
+    common.writeline(filename)
+    common.write(filename,'Google Cn Ip:')
+    common.writeline(filename)
     check_ip.run(filename,'203.208.',36,37)
     if need_google_hk:
-        fileuntil.writeline(filename)
-        fileuntil.write(filename,'Google Hk Ip:')
-        fileuntil.writeline(filename)
+        common.writeline(filename)
+        common.write(filename,'Google Hk Ip:')
+        common.writeline(filename)
         check_ip.run(filename,'74.125.',0,255)
 
 if __name__ == '__main__':
