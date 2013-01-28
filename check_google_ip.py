@@ -116,7 +116,7 @@ check_ip = Check_ip()
 
 def main():
     need_google_hk = False
-    common.ifhasfile()
+    common.ifhasfile(__filename__)
     common.writeline()
     common.write('Google Cn Ip:')
     common.writeline()
