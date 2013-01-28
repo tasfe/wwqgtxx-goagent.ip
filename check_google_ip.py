@@ -47,11 +47,11 @@ class Common(object):
         return os.path.join(os.path.dirname(__file__), filename)
 
     def ifhasfile():
-        if os.path.isfile(getfile(common.filename)):
-            os.remove(getfile(common.filename)) 
+        if os.path.isfile(getfile(__filename__)):
+            os.remove(getfile(__filename__)) 
 		
     def write(str_ips):
-        f = open(getfile(common.filename),'a+') 
+        f = open(getfile(__filename__),'a+') 
         print str_ips
         f.write(str_ips)
         f.close()
@@ -116,16 +116,16 @@ check_ip = Check_ip()
 
 def main():
     need_google_hk = False
-    common.ifhasfile(filename)
-    common.writeline(filename)
-    common.write(filename,'Google Cn Ip:')
-    common.writeline(filename)
-    check_ip.run(filename,'203.208.',36,37)
+    common.ifhasfile()
+    common.writeline()
+    common.write('Google Cn Ip:')
+    common.writeline()
+    check_ip.run(__filename__,'203.208.',36,37)
     if need_google_hk:
-        common.writeline(filename)
-        common.write(filename,'Google Hk Ip:')
-        common.writeline(filename)
-        check_ip.run(filename,'74.125.',0,255)
+        common.writeline()
+        common.write('Google Hk Ip:')
+        common.writeline()
+        check_ip.run(__filename__,'74.125.',0,255)
 
 if __name__ == '__main__':
     main()
