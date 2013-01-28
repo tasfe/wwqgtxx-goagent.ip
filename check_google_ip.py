@@ -82,7 +82,7 @@ class Common(object):
             print str_ips
             common.CONFIG.set(section,option,str_ips)
             f = open(self.getfile(__config__),'w') 
-            f.write(common.CONFIG)
+            self.CONFIG.write(f)
             f.close()
             self.IPS = []
 		
