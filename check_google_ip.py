@@ -22,8 +22,9 @@ import ssl
 import socket
 import ConfigParser
 
-__config__  = 'proxy.ini'
-__file__    = 'check_google_ip.py'
+__config__   = 'proxy.ini'
+__file__     = 'check_google_ip.py'
+__filename__ =  'ip.txt'
 
 
 
@@ -33,9 +34,8 @@ class Common(object):
         """load config from proxy.ini"""
         ConfigParser.RawConfigParser.OPTCRE = re.compile(r'(?P<option>[^=\s][^=]*)\s*(?P<vi>[=])\s*(?P<value>.*)$')
         self.CONFIG = ConfigParser.ConfigParser()
-        self.CONFIG.read(self.getfile( __config__))
+        self.CONFIG.read(os.path.join(os.path.dirname(__file__), __config__))
         self.IPS = []
-        self.filename = 'ip.txt'
 
 
     def getfile(filename):
