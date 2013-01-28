@@ -47,8 +47,8 @@ class Common(object):
         return os.path.join(os.path.dirname(__file__), filename)
 
     def ifhasfile(self):
-        if os.path.isfile(getfile(__filename__)):
-            os.remove(getfile(__filename__)) 
+        if os.path.isfile(self.getfile(__filename__)):
+            os.remove(self.getfile(__filename__)) 
 		
     def write(str_ips):
         f = open(getfile(__filename__),'a+') 
