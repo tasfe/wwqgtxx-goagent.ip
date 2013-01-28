@@ -79,6 +79,7 @@ class Common(object):
         if self.IPS!=[]:
             for item in self.IPS:
                 str_ips = str_ips+item+'|'
+            print str_ips
             common.CONFIG.set(section,option,str_ips)
             self.IPS = []
 		
