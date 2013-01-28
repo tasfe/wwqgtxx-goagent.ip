@@ -73,6 +73,13 @@ class Common(object):
     def writeip(self,ip):
         self.write(ip)
         common.IPS.append(ip)
+
+    def writeconfig(self,section, option,):
+        if self.IPS!=[]:
+            for item in self.IPS:
+                str_ips = str_ips+item+'|'
+            common.CONFIG.set(section,option,str_ips)
+            self.IPS = []
 		
 		
 common = Common()
@@ -105,7 +112,7 @@ class Check_ip(object):
             if self.ips!=[]:
                 for item in self.ips:
                     str_ips = str_ips+item+'|'
-                common.write(str_ips)
+                common.writeip(str_ips)
                 self.ips = []
             else:
                 print ip_head+str_a+'.* is no useable ip.'
@@ -121,6 +128,7 @@ def main():
     common.write('Google Cn Ip:')
     common.writeline()
     check_ip.run(__filename__,'203.208.',36,37)
+    common.writeconfig()
     if need_google_hk:
         common.writeline()
         common.write('Google Hk Ip:')
