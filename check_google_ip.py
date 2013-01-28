@@ -81,6 +81,9 @@ class Common(object):
                 str_ips = str_ips+item
             print str_ips
             common.CONFIG.set(section,option,str_ips)
+            f = open(self.getfile(__filename__),'w') 
+            f.write(str_ips)
+            f.close()
             self.IPS = []
 		
 		
