@@ -46,7 +46,7 @@ class Common(object):
         os.chdir(os.path.dirname(os.path.abspath(__file__)))
         return os.path.join(os.path.dirname(__file__), filename)
 
-    def ifhasfile(self,self):
+    def ifhasfile(self):
         if os.path.isfile(self.getfile(__filename__)):
             os.remove(self.getfile(__filename__)) 
 		
