@@ -80,7 +80,7 @@ common = Common()
 
 class Check_ip(object):
     ips = []
-    def check_ip(ip):
+    def check_ip(self,ip):
         try:
             with gevent.timeout.Timeout(5):
                 sock = socket.create_connection((ip, 443))
@@ -94,14 +94,14 @@ class Check_ip(object):
             pass
         except Exception as e:
             pass
-    def run(filename,ip_head,ip_start,ip_end):
+    def run(self,filename,ip_head,ip_start,ip_end):
         for a in xrange(ip_start,(ip_end+1)):
             global ips
             str_a = '%d' % a
             greenlets = [gevent.spawn(check_ip, ip_head+str_a+'.%d' % i)for i in xrange(1, 256)]
             gevent.joinall(greenlets)
             str_ips = ''
-            print getln()
+            print common.getln()
             if self.ips!=[]:
                 for item in self.ips:
                     str_ips = str_ips+item+'|'
@@ -109,7 +109,7 @@ class Check_ip(object):
                 self.ips = []
             else:
                 print ip_head+str_a+'.* is no useable ip.'
-            print getln()
+            print common.getln()
 			
 check_ip = Check_ip()
 
