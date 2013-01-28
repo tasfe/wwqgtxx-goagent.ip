@@ -38,7 +38,7 @@ class Common(object):
         self.IPS = []
 
 
-    def getfile(filename):
+    def getfile(self,filename):
         global __file__
         __file__ = os.path.abspath(__file__)
         if os.path.islink(__file__):
@@ -46,32 +46,32 @@ class Common(object):
         os.chdir(os.path.dirname(os.path.abspath(__file__)))
         return os.path.join(os.path.dirname(__file__), filename)
 
-    def ifhasfile(self):
+    def ifhasfile(self,self):
         if os.path.isfile(self.getfile(__filename__)):
             os.remove(self.getfile(__filename__)) 
 		
-    def write(str_ips):
-        f = open(getfile(__filename__),'a+') 
+    def write(self,str_ips):
+        f = open(self.getfile(__filename__),'a+') 
         print str_ips
         f.write(str_ips)
         f.close()
 
-    def getln():
+    def getln(self):
         if os.name == 'nt':
             return '\r\n'
         else:
             return '\n'
 
-    def writeln():
-        write(getln())
+    def writeln(self):
+        self.write(self.getln())
 	
-    def writeline():
-        writeln()
-        write('----------------------------------------------------')
-        writeln()
+    def writeline(self):
+        self.writeln()
+        self.write('----------------------------------------------------')
+        self.writeln()
 	
-    def writeip(ip):
-        write(ip)
+    def writeip(self,ip):
+        self.write(ip)
         common.IPS.append(ip)
 		
 		
