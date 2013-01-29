@@ -80,7 +80,7 @@ class Common(object):
             for item in self.IPS:
                 str_ips = str_ips+item
             print str_ips
-            self.writeconfig(section, option)
+            self.writeconfig(section, option,str_ips)
             self.IPS = []
 
     def writeconfig(self,section, option,str):
