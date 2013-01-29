@@ -1,6 +1,6 @@
 def main():
     import httplib
-    conn = httplib.HTTPConnection("www.google.cnj", 80, False)
+    conn = httplib.HTTPConnection("www.google.cn", 80, False)
     conn.request('GET', '/svn/bootstrap.txt', headers = {"Host": "gfangqiang.googlecode.com"})
     res = conn.getresponse()
     print 'version:', res.version
