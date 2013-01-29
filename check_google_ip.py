@@ -141,7 +141,7 @@ def main():
     common.write('Google Cn Ip:')
     common.writeline()
     common.writeconfig('google_cn','hosts','')
-    check_ip.run(__filename__,'203.208.',46,47)
+    #check_ip.run(__filename__,'203.208.',46,47)
     #check_ip.run(__filename__,'203.208.',46,47)
     common.writeips('google_cn','hosts')
     if common.getconfig('google_cn','hosts') == '' :
