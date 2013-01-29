@@ -147,11 +147,11 @@ def main():
     if common.getconfig('google_cn','hosts') == '' :
         print 'Can\'t Find Google Cn Ip,Change To Google_hk'
         common.writeconfig('gae','profile','google_hk')
-        update.main((tuple(x for x in common.getconfig('gae','profile','google_hk').split('|') if x))[0])
+        update.main((tuple(x for x in common.getconfig('gae','google_hk').split('|') if x))[0])
     else :
         common.writeconfig('gae','profile','google_cn')
         print 'Find Google Cn Ip Successful,Change To Google_cn'
-        update.main((tuple(x for x in common.getconfig('gae','profile','google_cn').split('|') if x))[0])
+        update.main((tuple(x for x in common.getconfig('gae','google_cn').split('|') if x))[0])
     if need_google_hk:
         common.writeline()
         common.write('Google Hk Ip:')
