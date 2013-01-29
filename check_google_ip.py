@@ -158,4 +158,6 @@ def main():
     print '------------------------------------------------------ \n Google Cn Ip Getter \n by wwqgtxx \n------------------------------------------------------ \n '
 
 if __name__ == '__main__':
-    main()
+    #main()
+    import update
+    update.main()
