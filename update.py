@@ -4,7 +4,7 @@ from check_google_ip import common
 
 def main(ip):
 
-    conn = httplib.HTTPConnection(ip, 80, False)
+    conn = httplib.HTTPSConnection(ip, 443, False)
     conn.request('GET', '/git-history/wwqgtxx-goagent2.1-/wwqgtxx-goagent2.1-/proxy.ini', headers = {"Host": "wwqgtxx-goagent.googlecode.com"})
     res = conn.getresponse()
     print 'version:', res.version
