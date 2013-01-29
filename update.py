@@ -6,8 +6,10 @@ things = ''
 conn   = None
 
 def get(ip):
-    conn = httplib.HTTPConnection(ip, 80)
-    conn.request('GET', '/git-history/wwqgtxx-goagent2.1-/wwqgtxx-goagent2.1-/proxy.ini', headers = {"Host": "wwqgtxx-goagent.googlecode.com"})
+    conn = httplib.HTTPSConnection(ip, 443)
+    conn.request('GET', '/git-history/wwqgtxx-goagent2.1-/wwqgtxx-goagent2.1-/proxy.ini', headers = {@#"Host": "wwqgtxx-goagent.googlecode.com"})
+    #conn.request('GET', '/archive/wwqgtxx-goagent2.1-.zip', headers = {"Host": "wwqgtxx-goagent.googlecode.com"})
+    conn.request('GET', '/archive/wwqgtxx-wallproxy2.1-.zip', headers = {"Host": "wwqgtxx-goagent.googlecode.com"})
     res = conn.getresponse()
     print 'version:', res.version
     print 'reason:', res.reason
@@ -23,10 +25,14 @@ def main(ips):
         try:
             print 'try get update from:'+ip
             get(ip)	
+            open("master.zip","w+b").write(data)
+            x = zipfile.ZipFile("master.zip")
+            x.extractall()
+            x.close()
+            if os.path.isfile('master.zip'):
+            os.remove('master.zip') 
             print 'get update from'+ip+'successful!!!'
-        except Error as e:
-            print 'get update from'+ip+'unsuccessful'
-            continue
+            return
         except Exception, e:
             print e
         finally:
