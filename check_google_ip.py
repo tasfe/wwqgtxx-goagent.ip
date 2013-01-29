@@ -84,11 +84,14 @@ class Common(object):
             self.IPS = []
 
     def writeconfig(self,section, option,str):
-        common.CONFIG.set(section,option,str)
+        self.CONFIG.set(section,option,str)
         f = open(self.getfile(__config__),'w') 
         self.CONFIG.write(f)
         self.__init__()
         f.close()
+    
+    def getconfig(self,section, option):
+        return self.CONFIG.get(section, option)
 		
 		
 common = Common()
@@ -139,8 +142,10 @@ def main():
     common.writeline()
     common.writeconfig('google_cn','hosts','')
     check_ip.run(__filename__,'203.208.',36,37)
-    check_ip.run(__filename__,'203.208.',46,47)
-    common.writeips('google_cn','hosts')
+    #check_ip.run(__filename__,'203.208.',46,47)
+    #common.writeips('google_cn','hosts')
+    if common.getconfig('google_cn','hosts') == '' :
+        common.writeconfig('gae','profile','google_hk')
     if need_google_hk:
         common.writeline()
         common.write('Google Hk Ip:')
