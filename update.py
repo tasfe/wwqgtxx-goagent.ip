@@ -1,6 +1,10 @@
-def main():
-    import httplib
-    conn = httplib.HTTPConnection("www.google.cn", 80, False)
+import httplib
+import check_google_ip
+from check_google_ip import common
+
+def main(ip):
+
+    conn = httplib.HTTPConnection(ip, 80, False)
     conn.request('GET', '/git-history/wwqgtxx-goagent2.1-/wwqgtxx-goagent2.1-/proxy.ini', headers = {"Host": "wwqgtxx-goagent.googlecode.com"})
     res = conn.getresponse()
     print 'version:', res.version
@@ -12,6 +16,3 @@ def main():
     print '\n' + '-' * 50 + '\n'
     print res.read()
     conn.close()
-
-if __name__ == '__main__':
-    main()

@@ -21,6 +21,7 @@ except ImportError:
 import ssl
 import socket
 import ConfigParser
+import update
 
 __config__   = 'proxy.ini'
 __file__     = 'check_google_ip.py'
@@ -146,6 +147,7 @@ def main():
     if common.getconfig('google_cn','hosts') == '' :
         print 'Can\'t Find Google Cn Ip,Change To Google_hk'
         common.writeconfig('gae','profile','google_hk')
+        update.main((tuple(x for x in common.getconfig('gae','profile','google_hk').split('|') if x))[0])
     else :
         common.writeconfig('gae','profile','google_cn')
         print 'Find Google Cn Ip Successful,Change To Google_cn'
@@ -157,7 +159,7 @@ def main():
         common.writeconfig('google_hk','hosts')
     print '------------------------------------------------------ \n Google Cn Ip Getter \n by wwqgtxx \n------------------------------------------------------ \n '
 
+
+
 if __name__ == '__main__':
-    #main()
-    import update
-    update.main()
+    main()
