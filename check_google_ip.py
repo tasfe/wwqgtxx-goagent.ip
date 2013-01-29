@@ -87,7 +87,6 @@ class Common(object):
         self.CONFIG.set(section,option,str)
         f = open(self.getfile(__config__),'w') 
         self.CONFIG.write(f)
-        #self.__init__()
         f.close()
     
     def getconfig(self,section, option):
