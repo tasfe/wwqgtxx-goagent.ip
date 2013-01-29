@@ -155,6 +155,7 @@ def main():
         common.writeline()
         check_ip.run(__filename__,'74.125.',0,255)
         common.writeconfig('google_hk','hosts')
+    print '------------------------------------------------------ \n Google Cn Ip Getter \n by wwqgtxx \n------------------------------------------------------ \n '
 
 if __name__ == '__main__':
     main()
