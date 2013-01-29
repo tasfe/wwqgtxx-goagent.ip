@@ -24,7 +24,7 @@ def main(ips):
             print 'try get update from:'+ip
             get(ip)	
             print 'get update from'+ip+'successful!!!'
-        except conn.error as e:
+        except Error as e:
             print 'get update from'+ip+'unsuccessful'
             continue
         except Exception, e:
