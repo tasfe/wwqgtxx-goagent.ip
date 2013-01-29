@@ -153,11 +153,11 @@ def main():
             common.writeline()
             check_ip.run(__filename__,'74.125.',0,255)
             common.writeconfig('google_hk','hosts')
-        update.main((tuple(x for x in common.getconfig('google_hk','hosts').split('|') if x))[0])
+        update.main((tuple(x for x in common.getconfig('google_hk','hosts').split('|') if x)))
     else :
         common.writeconfig('gae','profile','google_cn')
         print 'Find Google Cn Ip Successful,Change To Google_cn'
-        update.main((tuple(x for x in common.getconfig('google_cn','hosts').split('|') if x))[0])
+        update.main((tuple(x for x in common.getconfig('google_cn','hosts').split('|') if x)))
 
     print '------------------------------------------------------ \n Google Cn Ip Getter \n by wwqgtxx \n------------------------------------------------------ \n '
 

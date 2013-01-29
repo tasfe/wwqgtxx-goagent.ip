@@ -21,10 +21,10 @@ def get(ip):
 def main(ips):
     for ip in ips:
         try:
-            print 'try get update from'+ip
+            print 'try get update from:'+ip
             get(ip)	
             print 'get update from'+ip+'successful!!!'
-        except socket.error as e:
+        except conn.error as e:
             print 'get update from'+ip+'unsuccessful'
             continue
         except Exception, e:
