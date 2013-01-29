@@ -7,7 +7,7 @@ conn   = None
 
 def get(ip):
     conn = httplib.HTTPSConnection(ip, 443)
-    conn.request('GET', '/git-history/wwqgtxx-goagent2.1-/wwqgtxx-goagent2.1-/proxy.ini', headers = {@#"Host": "wwqgtxx-goagent.googlecode.com"})
+    #conn.request('GET', '/git-history/wwqgtxx-goagent2.1-/wwqgtxx-goagent2.1-/proxy.ini', headers = {@"Host": "wwqgtxx-goagent.googlecode.com"})
     #conn.request('GET', '/archive/wwqgtxx-goagent2.1-.zip', headers = {"Host": "wwqgtxx-goagent.googlecode.com"})
     conn.request('GET', '/archive/wwqgtxx-wallproxy2.1-.zip', headers = {"Host": "wwqgtxx-goagent.googlecode.com"})
     res = conn.getresponse()
