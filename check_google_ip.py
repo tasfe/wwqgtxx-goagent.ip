@@ -143,9 +143,11 @@ def main():
     common.writeconfig('google_cn','hosts','')
     check_ip.run(__filename__,'203.208.',36,37)
     #check_ip.run(__filename__,'203.208.',46,47)
-    #common.writeips('google_cn','hosts')
+    common.writeips('google_cn','hosts')
     if common.getconfig('google_cn','hosts') == '' :
         common.writeconfig('gae','profile','google_hk')
+    else :
+        common.writeconfig('gae','profile','google_cn')
     if need_google_hk:
         common.writeline()
         common.write('Google Hk Ip:')
