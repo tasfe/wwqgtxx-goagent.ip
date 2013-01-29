@@ -137,9 +137,9 @@ def main():
     common.writeline()
     common.write('Google Cn Ip:')
     common.writeline()
+    common.writeconfig('google_cn','hosts','')
     check_ip.run(__filename__,'203.208.',36,37)
     check_ip.run(__filename__,'203.208.',46,47)
-    common.writeconfig('google_cn','hosts','')
     common.writeips('google_cn','hosts')
     if need_google_hk:
         common.writeline()
