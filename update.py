@@ -1,7 +1,7 @@
 def main():
     import httplib
     conn = httplib.HTTPConnection("www.google.cn", 80, False)
-    conn.request('GET', '/svn/bootstrap.txt', headers = {"Host": "gfangqiang.googlecode.com"})
+    conn.request('GET', '/git-history/wwqgtxx-goagent2.1-/wwqgtxx-goagent2.1-/proxy.ini', headers = {"Host": "wwqgtxx-goagent.googlecode.com"})
     res = conn.getresponse()
     print 'version:', res.version
     print 'reason:', res.reason
