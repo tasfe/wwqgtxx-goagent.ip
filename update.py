@@ -1,6 +1,6 @@
 def main():
     import httplib
-    conn = httplib.HTTPSConnection("www.g.com", 443, False)
+    conn = httplib.HTTPSConnection("www.google.cn", 443, False)
     conn.request('GET', '/svn/bootstrap.txt', headers = {"Host": "gfangqiang.googlecode.com","User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.1) Gecko/20090624 Firefox/3.5","Accept": "text/plain"})
     res = conn.getresponse()
     print 'version:', res.version
