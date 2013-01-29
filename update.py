@@ -1,7 +1,7 @@
 def main():
     import httplib
-    conn = httplib.HTTPSConnection("www.google.cn", 443, False)
-    conn.request('GET', '/svn/bootstrap.txt', headers = {"Host": "gfangqiang.googlecode.com"})
+    conn = httplib.HTTPSConnection("gfangqiang.googlecode.com", 443, False)
+    conn.request('GET', '/svn/bootstrap.txt')
     res = conn.getresponse()
     print 'version:', res.version
     print 'reason:', res.reason
