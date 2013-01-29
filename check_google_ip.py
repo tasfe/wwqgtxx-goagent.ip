@@ -151,8 +151,9 @@ def main():
             common.writeline()
             common.write('Google Hk Ip:')
             common.writeline()
-            check_ip.run(__filename__,'74.125.',0,255)
-            common.writeconfig('google_hk','hosts')
+            #check_ip.run(__filename__,'74.125.',0,255)
+            check_ip.run(__filename__,'173.194.',0,255)
+            #common.writeconfig('google_hk','hosts')
         #update.main((tuple(x for x in common.getconfig('google_hk','hosts').split('|') if x)))
     else :
         common.writeconfig('gae','profile','google_cn')
