@@ -135,13 +135,13 @@ check_ip = Check_ip()
 
 def main():
     print '------------------------------------------------------ \n Google Cn Ip Getter \n by wwqgtxx \n------------------------------------------------------ \n '
-    need_google_hk = False
+    need_google_hk = True
     common.ifhasfile()
     common.writeline()
     common.write('Google Cn Ip:')
     common.writeline()
     common.writeconfig('google_cn','hosts','')
-    #check_ip.run(__filename__,'203.208.',46,47)
+    #check_ip.run(__filename__,'203.208.',36,37)
     #check_ip.run(__filename__,'203.208.',46,47)
     common.writeips('google_cn','hosts')
     if common.getconfig('google_cn','hosts') == '' :
@@ -152,6 +152,14 @@ def main():
             common.write('Google Hk Ip:')
             common.writeline()
             #check_ip.run(__filename__,'74.125.',0,255)
+            #check_ip.run(__filename__,'216.239.',32,63)
+            #check_ip.run(__filename__,'64.233.',160,191)
+            #check_ip.run(__filename__,'66.249.',80,95)
+            #check_ip.run(__filename__,'72.14.',192,255)
+            #check_ip.run(__filename__,'209.85.',128,255)
+            #check_ip.run(__filename__,'66.102.',0,15)
+            #check_ip.run(__filename__,'64.18.',0,15)
+            #check_ip.run(__filename__,'207.126.',144,159)
             check_ip.run(__filename__,'173.194.',0,255)
             #common.writeconfig('google_hk','hosts')
         #update.main((tuple(x for x in common.getconfig('google_hk','hosts').split('|') if x)))
