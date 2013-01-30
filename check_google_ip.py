@@ -183,8 +183,6 @@ def main():
         common.writeconfig('gae','profile','google_cn')
         print 'Find Google Cn Ip Successful,Change To Google_cn'
         #update.main((tuple(x for x in common.getconfig('google_cn','hosts').split('|') if x)))
-
-        common.writeconfig('google_hk','hosts')
     print '-'*60+'\n Google Cn Ip Getter End \n by wwqgtxx \n'+'-'*60+'\n'
 
 
