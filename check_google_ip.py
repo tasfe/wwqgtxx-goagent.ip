@@ -159,8 +159,9 @@ def main():
             #check_ip.run(__filename__,'209.85.',128,255)
             #check_ip.run(__filename__,'66.102.',0,15)
             #check_ip.run(__filename__,'64.18.',0,15)
-            #check_ip.run(__filename__,'207.126.',144,159)
-            check_ip.run(__filename__,'173.194.',0,255)
+            check_ip.run(__filename__,'207.126.',144,159)
+            ##check_ip.run(__filename__,'173.194.',0,255)
+            #check_ip.run(__filename__,'173.194.',0,79)
             #common.writeconfig('google_hk','hosts')
         #update.main((tuple(x for x in common.getconfig('google_hk','hosts').split('|') if x)))
     else :
