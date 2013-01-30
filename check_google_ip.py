@@ -6,6 +6,12 @@ import sys
 import os
 import re
 
+
+try:
+    import ctypes
+except ImportError:
+    ctypes = None
+
 try:
     import gevent
     import gevent.monkey
@@ -145,7 +151,7 @@ def main():
     common.writeline()
     common.writeconfig('google_cn','hosts','')
     #check_ip.run(__filename__,'203.208.',36,37)
-    #check_ip.run(__filename__,'203.208.',46,47)
+    check_ip.run(__filename__,'203.208.',46,47)
     common.writeips('google_cn','hosts')
     if common.getconfig('google_cn','hosts') == '' :
         print 'Can\'t Find Google Cn Ip,Change To Google_hk'
@@ -165,8 +171,9 @@ def main():
             ##check_ip.run(__filename__,'64.18.',0,15)
             ##check_ip.run(__filename__,'207.126.',144,159)
             ##check_ip.run(__filename__,'173.194.',0,255)
-            check_ip.run(__filename__,'216.239.',32,46)
-            check_ip.run(__filename__,'72.14.',225,230)
+            ##################################################
+            #check_ip.run(__filename__,'216.239.',32,46)
+            #check_ip.run(__filename__,'72.14.',225,230)
             #check_ip.run(__filename__,'74.125.',0,31)
             #check_ip.run(__filename__,'74.125.',96,255)
             #check_ip.run(__filename__,'173.194.',0,79)
