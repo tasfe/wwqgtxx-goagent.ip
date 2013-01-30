@@ -68,7 +68,7 @@ class Common(object):
 	
     def writeline(self):
         self.writeln()
-        self.write('----------------------------------------------------')
+        self.write('-'*60)
         self.writeln()
 	
     def writeip(self,ip):
@@ -134,7 +134,10 @@ check_ip = Check_ip()
 
 
 def main():
-    print '------------------------------------------------------ \n Google Cn Ip Getter \n by wwqgtxx \n------------------------------------------------------ \n '
+    if ctypes and os.name == 'nt':
+        ctypes.windll.user32.ShowWindow(ctypes.windll.kernel32.GetConsoleWindow(), 1)
+        ctypes.windll.kernel32.SetConsoleTitleW(u'Google Ip Getter Started by wwqgtxx')
+    print '-'*60+'\n Google Cn Ip Getter Started \n by wwqgtxx \n'+'-'*60+'\n'
     need_google_hk = True
     common.ifhasfile()
     common.writeline()
@@ -174,7 +177,8 @@ def main():
         print 'Find Google Cn Ip Successful,Change To Google_cn'
         #update.main((tuple(x for x in common.getconfig('google_cn','hosts').split('|') if x)))
 
-    print '------------------------------------------------------ \n Google Cn Ip Getter \n by wwqgtxx \n------------------------------------------------------ \n '
+        common.writeconfig('google_hk','hosts')
+    print '-'*60+'\n Google Cn Ip Getter End \n by wwqgtxx \n'+'-'*60+'\n'
 
 
 
